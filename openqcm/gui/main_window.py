@@ -31,7 +31,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle(f"openQCM Dual  v{__version__}")
-        self.setMinimumSize(900, 500)
+        self.setMinimumSize(900, 650)
         self.resize(1100, 600)
 
         self._serial = None
@@ -257,6 +257,15 @@ class MainWindow(QMainWindow):
         self._disconnect()
 
     def closeEvent(self, event):
+        reply = QMessageBox.question(
+            self, "Quit",
+            "Are you sure you want to close the application?",
+            QMessageBox.Yes | QMessageBox.No, QMessageBox.No,
+        )
+        if reply == QMessageBox.No:
+            event.ignore()
+            return
+
         if self._csv_logger.is_open:
             self._csv_logger.close()
         self._disconnect()
