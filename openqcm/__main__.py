@@ -16,6 +16,13 @@ _ICON_PATH = os.path.join(_ICON_DIR, "openqcm.ico")
 
 
 def main():
+    # Windows: set AppUserModelID so the taskbar shows our icon, not Python's
+    if sys.platform == "win32":
+        import ctypes
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(
+            "openqcm.dual.v2"
+        )
+
     app = QApplication(sys.argv)
     app.setStyleSheet(STYLESHEET)
 

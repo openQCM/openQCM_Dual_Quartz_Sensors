@@ -16,7 +16,7 @@ YELLOW = "#f9e2af"
 
 # Plot pens / symbols
 PEN_RAW = None  # no line for raw — dots only
-SYMBOL_RAW = {"symbol": "o", "symbolSize": 1, "symbolBrush": YELLOW, "symbolPen": None}
+SYMBOL_RAW = {"symbol": "o", "symbolSize": 1.5, "symbolBrush": YELLOW, "symbolPen": None}
 PEN_AVG = pg.mkPen(color=ACCENT, width=2)
 PEN_TEMP = pg.mkPen(color=RED, width=2)
 PEN_ONBOARD = pg.mkPen(color=GREEN, width=1.5)
