@@ -24,6 +24,7 @@ a = Analysis(
     hiddenimports=[
         "pyqtgraph",
         "numpy",
+        "numpy.core._multiarray_tests",
         "serial",
         "serial.tools",
         "serial.tools.list_ports",
@@ -52,7 +53,7 @@ a = Analysis(
         # Unused pyqtgraph backends
         "OpenGL", "PyOpenGL",
         # Unused numpy extras
-        "numpy.testing", "numpy.f2py", "numpy.distutils",
+        "numpy.f2py", "numpy.distutils",
     ],
     win_no_prefer_redirects=False,
     win_private_assemblies=False,
